@@ -21,7 +21,7 @@ def create_student():
     cur=conn.cursor()
     cur.execute('''
         `INSERT INTO students(name,grade,age)`
-                `VALUES(%s,%s,%s)`,
+                VALUES(%s,%s,%s),
                 (data['name'],data['grade'],data['age'])
 
     ''')
