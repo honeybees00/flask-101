@@ -20,7 +20,7 @@ def init_db():
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(100) NOT NULL,
                 grade VARCHAR(5) NOT NULL,
-                age INTERGER
+                age INT
 
                     
                 )   
