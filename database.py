@@ -23,7 +23,31 @@ def init_db():
                 age INT
 
                     
-                )   
+                ) 
+                CREATE TABLE IF NOT EXISTS Professor(
+                id serial PRIMARY KEY,
+                name VARCHER(50) NOT NULL,
+                specialization VARCHER,
+                
+                )  
+                CREATE TABLE IF NOT EXISTS Doctors(
+                is serial PRIMARY KEY,
+                name VARCHER (50) NOT NULL,
+                specialty VARCHER (50) NOT NULL,
+                phone int
+
+                )
+                CREATE TABLE IF NOT EXISTS patients(
+                id SERIAL PRIMARY KEY,
+                name VARCHER (50) NOT NULL,
+                d.o.b int
+                )
+                 CREATE TABLE IF NOT EXISTS(
+                 driver_id SERIAL PRIMARY KEY,
+                 
+                 )
+            
+
                     
                   '''  )
     conn.commit()
