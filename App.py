@@ -19,12 +19,12 @@ def create_student():
     data=request.get_json()
     conn= database.get_connection()
     cur=conn.cursor()
-    cur.execute('''
+    cur.execute("""
         INSERT INTO students(name,grade,age)
-                VALUES(%s,%s,%s),
+                VALUES(%s,%s,%s)
                 
 
-    ''',(data['name'],data['grade'],data['age']))
+    """,(data['name'],data['grade'],data['age']))
     conn.commit(); cur.close(); conn.close(); 
     return jsonify({"message":'person created'}), 201
 

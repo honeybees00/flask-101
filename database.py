@@ -15,7 +15,7 @@ def get_connection():
 def init_db():
     conn =get_connection()
     cur =conn.cursor()
-    cur.execute('''
+    cur.execute("""
             CREATE TABLE IF NOT EXISTS students(
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(100) NOT NULL,
@@ -23,33 +23,39 @@ def init_db():
                 age INT
 
                     
-                ) 
+                ); 
                 CREATE TABLE IF NOT EXISTS Professor(
                 id serial PRIMARY KEY,
-                name VARCHER(50) NOT NULL,
-                specialization VARCHER,
+                name VARCHAR(50) NOT NULL,
+                specialization VARCHAR(99)
                 
-                )  
+                );  
                 CREATE TABLE IF NOT EXISTS Doctors(
-                is serial PRIMARY KEY,
-                name VARCHER (50) NOT NULL,
-                specialty VARCHER (50) NOT NULL,
-                phone int
+                id serial PRIMARY KEY,
+                name VARCHAR(50) NOT NULL,
+                specialty VARCHAR(50) NOT NULL,
+                phone numeric
+                );
 
-                )
+                
                 CREATE TABLE IF NOT EXISTS patients(
                 id SERIAL PRIMARY KEY,
-                name VARCHER (50) NOT NULL,
-                d.o.b int
-                )
-                 CREATE TABLE IF NOT EXISTS(
+                name VARCHAR(50) NOT NULL,
+                dob int
+                );
+                 CREATE TABLE IF NOT EXISTS Driver(
                  driver_id SERIAL PRIMARY KEY,
+                license_type VARCHAR(50) NOT NULL,
+                name VARCHAR(50) NOT NULL
+                );
+
+
                  
-                 )
+            
             
 
                     
-                  '''  )
+                  """  )
     conn.commit()
     cur.close()
     conn.close()
